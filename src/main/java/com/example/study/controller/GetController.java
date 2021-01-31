@@ -19,6 +19,12 @@ public class GetController {
         System.out.println("pwd: " + pwd);
 
         return id + pwd;
+    }
+
+    // localhost:8080/api/multiParameter?account=abcd&email=study@gmail.com&page=10
+    public String getMultiParameter(@RequestParam String account,
+                                    @RequestParam String email,
+                                    @RequestParam int page){
 
     }
 }
