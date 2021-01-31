@@ -6,6 +6,8 @@ public class SearchParam {
     private String email;
     private int page;
 
+    // json 형식으로 받기 { "accout" : "", "email" : "", "page" : 0}
+
     public String getAccount() {
         return account;
     }

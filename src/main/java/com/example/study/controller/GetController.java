@@ -22,13 +22,14 @@ public class GetController {
         return id + pwd;
     }
 
-    // localhost:8080/api/multiParameter?account=abcd&email=study@gmail.com&page=10
+    // localhost:8080/api/getMultiParameter?account=abcd&email=study@gmail.com&page=10
     @GetMapping("/getMultiParameter")
-    public String getMultiParameter(SearchParam searchParam){
+    public SearchParam getMultiParameter(SearchParam searchParam){
         System.out.println(searchParam.getAccount());
         System.out.println(searchParam.getEmail());
         System.out.println(searchParam.getPage());
 
-        return "OK";
+        // json 형식으로 받기 { "accout" : "", "email" : "", "page" : 0}
+        return searchParam;
     }
 }
