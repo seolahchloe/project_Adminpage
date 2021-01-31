@@ -1,2 +1,4 @@
-package com.example.study.model;public class SearchParam {
+package com.example.study.model;
+
+public class SearchParam {
 }
