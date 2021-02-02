@@ -9,8 +9,7 @@ import java.time.LocalDateTime;
 public class User {
 
     private Long id;
-
-    @Column(name = "account")
+    
     private String account;
 
     private String email;
