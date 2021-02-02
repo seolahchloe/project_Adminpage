@@ -3,6 +3,8 @@ package com.example.study.repository;
 import com.example.study.StudyApplication;
 import com.example.study.StudyApplicationTests;
 import com.example.study.model.entity.User;
+import org.assertj.core.api.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -54,18 +56,17 @@ public class UserRepositoryTest extends StudyApplicationTests {
 
     @Test
     public void delete() {
-        Optional<User> user = userRepository.findById(2L);
+        Optional<User> user = userRepository.findById(1L);
+
+        Assertions.assertTrue(user.isPresent())
 
         user.ifPresent(selectUser ->{
             userRepository.delete(selectUser);
         });
 
-        Optional<User> deleteUser = userRepository.findById(2L);
+        Optional<User> deleteUser = userRepository.findById(1L);
 
-        if(deleteUser.isPresent()){
-            System.out.println("데이터 존재: " + deleteUser.get());
-        }else {
-            System.out.println("데이터 삭제 데이터 없음");
+        Assertions.assertFalse(deleteUser.isPresent());
         }
     }
 }
