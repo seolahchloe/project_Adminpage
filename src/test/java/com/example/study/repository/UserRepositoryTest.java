@@ -33,6 +33,7 @@ public class UserRepositoryTest extends StudyApplicationTests {
 
         user.ifPresent(selectUser -> {
             System.out.println("user: " + selectUser);
+            System.out.println("email: " + selectUser.getEmail());
         });
     }
 
