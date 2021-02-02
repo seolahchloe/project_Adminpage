@@ -5,6 +5,9 @@ import com.example.study.StudyApplicationTests;
 import com.example.study.model.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -49,7 +52,8 @@ public class UserRepositoryTest extends StudyApplicationTests {
         });
     }
 
-    public void delete() {
-
+    @DeleteMapping("/api/user")
+    public void delete(@RequestParam Long id) {
+        
     }
 }
