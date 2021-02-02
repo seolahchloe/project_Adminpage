@@ -12,6 +12,10 @@ public class UserRepositoryTest extends StudyApplicationTests {
 
     public void create() {
         User user = new User();
+        user.setId();
+        user.setAccount();
+        user.setEmail();
+        user.setPhoneNumber();
     }
 
     public void read() {
