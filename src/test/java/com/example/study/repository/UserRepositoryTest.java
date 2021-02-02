@@ -8,11 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class UserRepositoryTest extends StudyApplicationTests {
 
     @Autowired
-
     private UserRepository userRepository;
-    
-    public void create() {
 
+    public void create() {
+        User user = new User();
     }
 
     public void read() {
