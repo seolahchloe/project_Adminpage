@@ -58,7 +58,7 @@ public class UserRepositoryTest extends StudyApplicationTests {
     public void delete() {
         Optional<User> user = userRepository.findById(1L);
 
-        Assertions.assertTrue(user.isPresent())
+        Assertions.assertTrue(user.isPresent());
 
         user.ifPresent(selectUser ->{
             userRepository.delete(selectUser);
@@ -69,4 +69,3 @@ public class UserRepositoryTest extends StudyApplicationTests {
         Assertions.assertFalse(deleteUser.isPresent());
         }
     }
-}
