@@ -7,6 +7,7 @@ import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,6 +43,7 @@ public class UserRepositoryTest extends StudyApplicationTests {
         });
     }
     @Test
+    @Transactional
     public void update() {
         Optional<User> user = userRepository.findById(2L);
 
@@ -55,8 +57,9 @@ public class UserRepositoryTest extends StudyApplicationTests {
     }
 
     @Test
+    @Transactional
     public void delete() {
-        Optional<User> user = userRepository.findById(1L);
+        Optional<User> user = userRepository.findById(3L);
 
         Assertions.assertTrue(user.isPresent());
 
@@ -64,7 +67,7 @@ public class UserRepositoryTest extends StudyApplicationTests {
             userRepository.delete(selectUser);
         });
 
-        Optional<User> deleteUser = userRepository.findById(1L);
+        Optional<User> deleteUser = userRepository.findById(3L);
 
         Assertions.assertFalse(deleteUser.isPresent());
         }
